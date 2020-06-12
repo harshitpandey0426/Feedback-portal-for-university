@@ -1,7 +1,9 @@
+
 const express=require('express');
 const passport=require('passport')
 const GoogleStrategy=require('passport-google-oauth20').Strategy;
-
+//harshitpandey0426
+//Bajajpulsar@100
 const keys=require('./config/keys');//NO need to say keys.js(i.e extension is not required)
 const app=express();
 
@@ -10,11 +12,11 @@ passport.use(new GoogleStrategy({
         clientSecret:keys.googleclientSecret,
         callbackURL:'/auth/google/callback'
     },
-    (accessToken,refreshToken,profile,done) =>{
-        console.log('access token',accessToken);
-        console.log('refresh token',refreshToken);
-        console.log('profile:',profile);
-
+    (accessToken,refreshToken,profile,done) =>{   //This fetch information from google about my account, which will be visible on console
+        console.log('access token',accessToken);  //access token ko he google dekhega aur smjhega ki isko ko maine request grant ki thi photo ya email me changes ki to ye it google can allow this request to access.
+        console.log('refresh token',refreshToken);// we are not using access and refresh token, but access token gets refreshed in small amount of time, so it is related to it.
+        console.log('profile:',profile); // this is what we will be using in our project
+//ignore
     }
     )
 );
