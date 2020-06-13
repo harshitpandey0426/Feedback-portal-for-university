@@ -7,21 +7,22 @@ const User=mongoose.model('users'); //2 argument means we are going to load some
 passport.use(new GoogleStrategy({
     clientID:keys.googleclientID,
     clientSecret:keys.googleclientSecret,
-    callbackURL:'/auth/google/callback'
+    callbackURL:'http://localhost:5000/auth/google/callback'
 },
 (accessToken,refreshToken,profile,done) =>{   //This fetch information from google about my account, which will be visible on console
     
     User.findOne({googleId : profile.id})
-    .then((existinguser)=>{
-        if(existinguser)
+    .then((existingUser) => {
+        if(existingUser)
         {
             // If we already have arecord with this id
         }
         else{
             // if dont have record with this id
-            new User({googleID : profile.id}).save(); //.save() will save it to our database record, profile.id is the id coming from users profile ,new User wil create new user which is a modelclass
+            new User({googleId : profile.id}).save(); //.save() will save it to our database record, profile.id is the id coming from users profile ,new User wil create new user which is a modelclass
         }
-    })
+        // done(null, existingUser);
+    });
     // console.log('access token',accessToken);  //access token ko he google dekhega aur smjhega ki isko ko maine request grant ki thi photo ya email me changes ki to ye it google can allow this request to access.
     // console.log('refresh token',refreshToken);// we are not using access and refresh token, but access token gets refreshed in small amount of time, so it is related to it.
     // console.log('profile:',profile); // this is what we will be using in our project
