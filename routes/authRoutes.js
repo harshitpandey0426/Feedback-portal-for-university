@@ -11,6 +11,13 @@ app.get('/auth/google/callback',passport.authenticate(  //from the 'code' in url
     'google'
 ));
 
+app.get('/api/current_user', (req, res) => {
+    res.send(req.user);
+  });
 
+app.get('/api/logout',(req,res)=>{
+    req.logout(); // as soon as this logout function is called passport attaches it to the req object
+    res.send(req.user);// just to send some acknowlwedgement
+});
 
 };
