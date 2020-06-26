@@ -24,6 +24,7 @@ new GoogleStrategy(
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
     callbackURL: "/auth/google/callback",
+    proxy: true
     },
     async (accessToken, refereshToken, profile, done) => {
     try {
