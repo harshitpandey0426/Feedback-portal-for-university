@@ -10,8 +10,16 @@
 //     module.exports = require('./dev'); // if we fall in this 'else' then we will export whole dev keys to whoever is asking for it
 // }
 
-if (process.env.NODE_ENV === 'production') {
-    module.exports = require('./prod');
-  } else {
+// see what credential to written
+//either of development or production
+
+if( process.env.NODE_ENV === 'production')
+{
+    // we are in production
+    module.exports = require('./prod'); 
+}
+else
+{
+    //return dev keys
     module.exports = require('./dev');
-  }
+}

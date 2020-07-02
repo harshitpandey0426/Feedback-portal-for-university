@@ -7,8 +7,8 @@ import Logo from "./req.jpg";
 
 import Header from './Header';
 import Landing from './Landing';
-const DashBoard =    () => <h2>DashBoard</h2>
-const SurveyNew =    () => <h2>SurveyNew</h2>
+import Dashboard from './Dashboard';
+import SurveyNew from './surveys/SurveyNew';
 
 
 
@@ -21,21 +21,20 @@ class App extends Component {
 
 
 
-
+// container will give us margin(of our concern, vaise to aur bhi kaam hai)
     render(){
         return (
             
-            <div className="container">
+            
                 <BrowserRouter>
-                    <div>
+                    <div className="container">
                         <Header />
                         <Route exact path="/" component={Landing} />
-                        <Route exact path="/surveys" component={DashBoard} />
+                        <Route exact path="/surveys" component={Dashboard} />
                         <Route path="/surveys/new" component={SurveyNew} />
                         <img src={Logo} alt="website logo"/>
                     </div>
                 </BrowserRouter>
-            </div>
 
         );
     }
