@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import surveyList from './surveys/surveyList';
 // whenever user click on the add button send him to /surveys/new --- for this we use link inplace of anchor tag
 
 // fixed action btn and other class name we got from materialised css it inserts button with icon search for it on that site
