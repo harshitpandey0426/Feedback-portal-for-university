@@ -20,8 +20,8 @@ Go to path: 'server/'
 ## Tech Used
 * Front end : React redux
 * Back end : Express
-* google oauth2.0 : for verification
-* Heroku: for deployment
-* Stripe: to handle payments
-* mongodb: DataBase
-* SendGrid : mailer
+* Authentication: google oauth2.0
+* Deployment: Heroku
+* Payments: Stripe
+* DataBase: MongoDB
+* Mailer: SendGrid
