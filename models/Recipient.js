@@ -5,3 +5,6 @@ const recipientSchema = new Schema({
     responded : {type : Boolean,default : false} //has responded earlier or not
 });
 module.exports = recipientSchema;
+
+
+
