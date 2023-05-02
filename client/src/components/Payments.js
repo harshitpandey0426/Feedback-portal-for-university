@@ -20,4 +20,6 @@ class Payments extends Component{
         );
     }
 }
+
+
 export default connect(null,actions) (Payments); // to let action work, connecting react and redux
